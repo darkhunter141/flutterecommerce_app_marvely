@@ -1,14 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:marvelyprojects/files_dart/homepage.dart';
-import 'package:marvelyprojects/files_dart/passwordreset.dart';
-import 'package:marvelyprojects/files_dart/signup.dart';
+import 'package:marvelyprojects/files_dart/homepage/homepage.dart';
+import 'package:marvelyprojects/files_dart/aurth_app/passwordreset.dart';
+import 'package:marvelyprojects/files_dart/aurth_app/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sign_button/sign_button.dart';
-
 
 class auth extends StatefulWidget {
   @override
@@ -23,6 +22,7 @@ class _authState extends State<auth> {
   String us = "AAAAAAAAAAAAAVVVVVVVVV";
   String ps = "12ADDDDDDDDDDD3";
 
+
   _googleSignUp() async {
     try {
       final GoogleSignIn _googleSignIn = GoogleSignIn(
@@ -32,7 +32,7 @@ class _authState extends State<auth> {
 
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
       final GoogleSignInAuthentication? googleAuth =
-      await googleUser?.authentication;
+          await googleUser?.authentication;
 
       final AuthCredential credential = GoogleAuthProvider.credential(
         accessToken: googleAuth?.accessToken,
@@ -43,15 +43,19 @@ class _authState extends State<auth> {
       // print("signed in " + user.displayName);
 
       return user;
-    } catch (e) {
-    }
+    } catch (e) {}
   }
 
   void initState() {
     showperfer();
+
   }
 
   @override
+  setpageopen() async {
+    final preferset = await SharedPreferences.getInstance();
+    preferset.setString("pagedecidevalue","1");
+  }
   showperfer() async {
     final showdata = await SharedPreferences.getInstance();
     setState(() {
@@ -165,6 +169,7 @@ class _authState extends State<auth> {
                                     msg: "Please Enter Your Password");
                               } else if (user_con.text == us &&
                                   pass_con.text == ps) {
+                                setpageopen();
                                 Fluttertoast.showToast(msg: "Sign in approved");
                                 Navigator.push(
                                     context,
@@ -197,7 +202,7 @@ class _authState extends State<auth> {
                                 child: Text(
                                   "Sign Up",
                                   style: TextStyle(
-                                    fontSize: hei/40,
+                                    fontSize: hei / 40,
                                     color: Color(0xFF505050),
                                   ),
                                 )),
@@ -211,43 +216,53 @@ class _authState extends State<auth> {
                                 child: Text(
                                   "Forget Password",
                                   style: TextStyle(
-                                    fontSize: hei/40,
+                                    fontSize: hei / 40,
                                     color: Color(0xFF505050),
                                   ),
                                 ))
                           ],
                         ),
                       ),
-                      Text("Or",style: TextStyle(
-                        fontSize: 20,fontWeight: FontWeight.bold
-                      ),),
-                      SizedBox(height: hei/40),
-                      Center(
-                        child: SignInButton(
-                          buttonSize: ButtonSize.large,
-                            buttonType: ButtonType.google, onPressed: (){
-                          _googleSignUp().then((value)=>Navigator.push(context,MaterialPageRoute(builder: (context)=>homepage_app())));
-                        }),
+                      Text(
+                        "Or",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: hei / 40),
+                      Container(
+                        alignment: Alignment.center,
+                        width: wid/1.48,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SignInButton.mini(
+                                buttonSize: ButtonSize.medium,
+                                buttonType: ButtonType.google,
+                                onPressed: () {
+                                  _googleSignUp().then((value) => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => homepage_app())));
+                                }),
+                            SignInButton.mini(
+                                buttonSize: ButtonSize.medium,
+                                buttonType: ButtonType.facebook,
+                                onPressed: () {
+
+                                }),
+                            SignInButton.mini(
+                                buttonSize: ButtonSize.medium,
+                                buttonType: ButtonType.apple,
+                                onPressed: () {
+                                })
+                          ],
+                        ),
                       )
                     ],
                   ),
                 ),
               ),
             ),
-
-            // TextButton(
-            //     onPressed: () {
-            //       Navigator.push(context,
-            //           MaterialPageRoute(builder: (context) => singup()));
-            //     },
-            //     child: Text(
-            //       '''Dont't have an account ? Sign UP''',
-            //       style: GoogleFonts.roboto(
-            //           textStyle: TextStyle(
-            //               color: Color(0xFF505050),
-            //               fontSize: hei / 42,
-            //               fontWeight: FontWeight.bold)),
-            //     ))
           ],
         ),
       ),
