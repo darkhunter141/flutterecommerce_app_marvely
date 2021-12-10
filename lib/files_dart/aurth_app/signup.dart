@@ -48,12 +48,10 @@ class _authState extends State<singup> {
     prefer.setString("password", pass_con);
     prefer.setString("email", email_controller.text);
     prefer.setString("name", name_controller.text);
-    prefer.setInt("gender",getgender);
-    prefer.setInt("day",_dateTime!.day);
-    prefer.setInt("month",_dateTime!.month);
-    prefer.setInt("years",_dateTime!.year);
-
-
+    prefer.setInt("gender", getgender);
+    prefer.setInt("day", _dateTime!.day);
+    prefer.setInt("month", _dateTime!.month);
+    prefer.setInt("years", _dateTime!.year);
   }
 
   @override
@@ -337,9 +335,8 @@ class _authState extends State<singup> {
                             onPressed: () {
                               if (username_controller.text.isNotEmpty &&
                                   pass2_controller.text.isNotEmpty &&
-                                  email_controller.text.isNotEmpty
-                                  && _dateTime!.day !=0
-                                  &&
+                                  email_controller.text.isNotEmpty &&
+                                  _dateTime!.day != 0 &&
                                   name_controller.text.isNotEmpty &&
                                   getgender != 0 &&
                                   pass1_controller.text.isNotEmpty) {
@@ -351,14 +348,12 @@ class _authState extends State<singup> {
                                       MaterialPageRoute(
                                           builder: (context) => auth()));
                                   setState(() {
-                                    pass_con=pass1_controller.text;
+                                    pass_con = pass1_controller.text;
                                   });
-                                }
-                                else {
+                                } else {
                                   Fluttertoast.showToast(
                                       msg: "Password not match");
                                 }
-
                               } else {
                                 Fluttertoast.showToast(
                                     msg: "Enter Your Valid Data");

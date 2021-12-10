@@ -50,136 +50,134 @@ class _profileState extends State<profile> {
         elevation: 0,
         title: Text("My Profile"),
       ),
-      body: DoubleBack(
-        child: SingleChildScrollView(
-          child: Stack(
-            children: [
-              Column(
-                children: [
-                  Container(
-                    height: hei/7.5,
-                    color: Color(0xFF505050),
-                  ),
-                  Container(
-                    height: hei/1.31,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(35),
-                        topRight: Radius.circular(35),
-                      ),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Column(
+              children: [
+                Container(
+                  height: hei/7.5,
+                  color: Color(0xFF505050),
+                ),
+                Container(
+                  height: hei/1.31,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(35),
+                      topRight: Radius.circular(35),
                     ),
-                    child: ListView(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(right: 45,top:10),
-                              child: Container(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text ('$name_value',style: TextStyle(
-                                          fontWeight: FontWeight.bold,
+                  ),
+                  child: ListView(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 45,top:10),
+                            child: Container(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text ('$name_value',style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: hei/45
+                                      ),),
+                                      Text ('$email_value',style: TextStyle(
+                                          fontWeight: FontWeight.w600,
                                           fontSize: hei/45
-                                        ),),
-                                        Text ('$email_value',style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: hei/45
-                                        ),)
-                                      ],
-                                    )
-                                  ],
-                                ),
+                                      ),)
+                                    ],
+                                  )
+                                ],
                               ),
                             ),
-                          ],
-                        ),
-                        SizedBox(height: hei/55),
-                        Divider(
-                          thickness: 0.1,
-                            color: Color(0xFF505050),
-                        ),
-                        TextButton(onPressed: (){},
-                          child: ListTile(
-                            leading: Icon (Icons.account_circle_sharp,size: hei/23),
-                            trailing:  Icon (Icons.arrow_forward ,size: hei/23),
-                            title: Text ("Account Information",style: GoogleFonts.notoSans(textStyle: TextStyle(
-                              fontSize: hei/45,fontWeight: FontWeight.w400,
-                            )),),
                           ),
+                        ],
+                      ),
+                      SizedBox(height: hei/55),
+                      Divider(
+                        thickness: 0.1,
+                          color: Color(0xFF505050),
+                      ),
+                      TextButton(onPressed: (){},
+                        child: ListTile(
+                          leading: Icon (Icons.account_circle_sharp,size: hei/23),
+                          trailing:  Icon (Icons.arrow_forward ,size: hei/23),
+                          title: Text ("Account Information",style: GoogleFonts.notoSans(textStyle: TextStyle(
+                            fontSize: hei/45,fontWeight: FontWeight.w400,
+                          )),),
                         ),
-                        TextButton(onPressed: (){},
-                          child: ListTile(
-                              leading: Icon (Icons.shop_outlined,size: hei/23),
-                             trailing:  Icon (Icons.arrow_forward ,size: hei/23),
-                             title: Text ("My Orders",style: GoogleFonts.notoSans(textStyle: TextStyle(
-                               fontSize: hei/45,fontWeight: FontWeight.w400,
-                             )),),
-                          ),
+                      ),
+                      TextButton(onPressed: (){},
+                        child: ListTile(
+                            leading: Icon (Icons.shop_outlined,size: hei/23),
+                           trailing:  Icon (Icons.arrow_forward ,size: hei/23),
+                           title: Text ("My Orders",style: GoogleFonts.notoSans(textStyle: TextStyle(
+                             fontSize: hei/45,fontWeight: FontWeight.w400,
+                           )),),
                         ),
-                        TextButton(onPressed: (){},
-                          child: ListTile(
-                            leading: Icon (Icons.location_on_outlined,size: hei/23),
-                            trailing:  Icon (Icons.arrow_forward ,size: hei/23),
-                            title: Text ("My Delivery Address",style: GoogleFonts.notoSans(textStyle: TextStyle(
-                              fontSize: hei/45,fontWeight: FontWeight.w400,
-                            )),),
-                          ),
+                      ),
+                      TextButton(onPressed: (){},
+                        child: ListTile(
+                          leading: Icon (Icons.location_on_outlined,size: hei/23),
+                          trailing:  Icon (Icons.arrow_forward ,size: hei/23),
+                          title: Text ("My Delivery Address",style: GoogleFonts.notoSans(textStyle: TextStyle(
+                            fontSize: hei/45,fontWeight: FontWeight.w400,
+                          )),),
                         ),
+                      ),
 
-                        TextButton(onPressed: (){},
-                          child: ListTile(
-                            leading: Icon ( Icons.policy_outlined,size: hei/23),
-                            trailing:  Icon (Icons.arrow_forward ,size: hei/23),
-                            title: Text ("Privacy Policy",style: GoogleFonts.notoSans(textStyle: TextStyle(
-                              fontSize: hei/45,fontWeight: FontWeight.w400,
-                            )),),
-                          ),
+                      TextButton(onPressed: (){},
+                        child: ListTile(
+                          leading: Icon ( Icons.policy_outlined,size: hei/23),
+                          trailing:  Icon (Icons.arrow_forward ,size: hei/23),
+                          title: Text ("Privacy Policy",style: GoogleFonts.notoSans(textStyle: TextStyle(
+                            fontSize: hei/45,fontWeight: FontWeight.w400,
+                          )),),
                         ),
-                        TextButton(onPressed: (){},
-                          child: ListTile(
-                            leading: Icon (Icons.add_chart,size: hei/23),
-                            trailing:  Icon (Icons.arrow_forward ,size: hei/23),
-                            title: Text ("About",style: GoogleFonts.notoSans(textStyle: TextStyle(
-                              fontSize: hei/45,fontWeight: FontWeight.w400,
-                            )),),
-                          ),
+                      ),
+                      TextButton(onPressed: (){},
+                        child: ListTile(
+                          leading: Icon (Icons.add_chart,size: hei/23),
+                          trailing:  Icon (Icons.arrow_forward ,size: hei/23),
+                          title: Text ("About",style: GoogleFonts.notoSans(textStyle: TextStyle(
+                            fontSize: hei/45,fontWeight: FontWeight.w400,
+                          )),),
                         ),
-                        TextButton(onPressed: (){},
-                          child: ListTile(
-                            leading: Icon (Icons.exit_to_app_outlined,size: hei/23),
-                            trailing:  Icon (Icons.arrow_forward ,size: hei/23),
-                            title: Text ("Logout",style: GoogleFonts.notoSans(textStyle: TextStyle(
-                              fontSize: hei/45,fontWeight: FontWeight.w400,
-                            )),),
-                          ),
+                      ),
+                      TextButton(onPressed: (){},
+                        child: ListTile(
+                          leading: Icon (Icons.exit_to_app_outlined,size: hei/23),
+                          trailing:  Icon (Icons.arrow_forward ,size: hei/23),
+                          title: Text ("Logout",style: GoogleFonts.notoSans(textStyle: TextStyle(
+                            fontSize: hei/45,fontWeight: FontWeight.w400,
+                          )),),
                         ),
+                      ),
 
-                      ],
-                    ),
-                  )
-                ],
-              ),
-              Positioned(
-                  top: hei/15,
-                  left: hei / 20,
+                    ],
+                  ),
+                )
+              ],
+            ),
+            Positioned(
+                top: hei/15,
+                left: hei / 20,
+                child: CircleAvatar(
+                  radius: hei/16,
+                  backgroundColor: Color(0xFF505050),
                   child: CircleAvatar(
-                    radius: hei/16,
-                    backgroundColor: Color(0xFF505050),
-                    child: CircleAvatar(
-                      radius: hei/18,
-                      backgroundImage: gender_value == 2 ? AssetImage('assets/female.png'):AssetImage('assets/male.png'),
-                    ),
-                  )),
-            ],
-          ),
+                    radius: hei/18,
+                    backgroundImage: gender_value == 2 ? AssetImage('assets/female.png'):AssetImage('assets/male.png'),
+                  ),
+                )),
+          ],
         ),
       ),
 
