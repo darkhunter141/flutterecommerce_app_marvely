@@ -1,5 +1,6 @@
 import 'package:double_back_to_close/double_back_to_close.dart';
 import 'package:flutter_carousel_slider/carousel_slider_transforms.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:marvelyprojects/custom_widgets/custom_appbar.dart';
 import 'package:marvelyprojects/custom_widgets/custom_bottomnavigationbar.dart';
 import 'package:marvelyprojects/custom_widgets/custom_drawer.dart';
@@ -13,110 +14,79 @@ class homepage_app extends StatefulWidget {
 }
 
 class _homepage_appState extends State<homepage_app> {
+  bool favorite_icon_color = true;
   final List<String> sliderimageurl = [
-    "https://raw.githubusercontent.com/ashrafiabir01/image-project/main/Blue%20%26%20Cyan%20Gradient%20Mega%20Sale%20Promotion%20Offer%20Facebook%20Cover%20(1).png",
-    "https://raw.githubusercontent.com/ashrafiabir01/image-project/main/Blue%20%26%20Cyan%20Gradient%20Mega%20Sale%20Promotion%20Offer%20Facebook%20Cover%20(2).png",
-    "https://raw.githubusercontent.com/ashrafiabir01/image-project/main/Blue%20%26%20Cyan%20Gradient%20Mega%20Sale%20Promotion%20Offer%20Facebook%20Cover%20(3).png",
-    "https://raw.githubusercontent.com/ashrafiabir01/image-project/main/Blue%20%26%20Cyan%20Gradient%20Mega%20Sale%20Promotion%20Offer%20Facebook%20Cover%20(4).png",
-    "https://raw.githubusercontent.com/ashrafiabir01/image-project/main/Blue%20%26%20Cyan%20Gradient%20Mega%20Sale%20Promotion%20Offer%20Facebook%20Cover.png"
+    "assets/sliderimage1.png",
+    'assets/sliderimage2.png',
+    'assets/sliderimage3.png',
+    'assets/sliderimage4.png',
+    'assets/sliderimage5.png'
   ];
   final List<custom_product_display> prouctname = [
     custom_product_display(
-        "Product 1",
+        "Stylish Black Shirt",
         "https://github.com/ashrafiabir01/image-project/blob/main/naisproduct.png?raw=true",
-        4,
+        5,
         200,
-        0.1),
+        0.1,
+        "55%",
+        500),
     custom_product_display(
-        "Product 2",
-        "https://purepng.com/public/uploads/large/white-tshirt-n0j.png",
-        4,
-        200,
-        0.1),
+        "Stylish White Shirt",
+        "https://purepng.com/public/uploads/large/purepng.com-white-mens-polo-shirtpolo-shirtcottongarmentsfebricwhitemens-1421526392154xt9zg.png",
+        4.6,
+        220,
+        0.1,
+        "80%",
+        340),
     custom_product_display(
-        "Product 1",
-        "https://github.com/ashrafiabir01/image-project/blob/main/naisproduct.png?raw=true",
-        4,
-        200,
-        0.1),
+        "Stylish Blue Shirt",
+        "https://purepng.com/public/uploads/large/purepng.com-blue-t-shirtclothingt-shirtt-shirtdressfashionclothshirt-691522330467vjhb0.png",
+        5,
+        1200,
+        0.1,
+        "30%",
+        1500),
     custom_product_display(
-        "Product 2",
-        "https://purepng.com/public/uploads/large/white-tshirt-n0j.png",
-        4,
-        200,
-        0.1),
+        "Stylish Red Shirt",
+        "https://purepng.com/public/uploads/large/red-t-shirt-plp.png",
+        5,
+        600,
+        0.1,
+        "40%",
+        900),
     custom_product_display(
-        "Product 1",
-        "https://github.com/ashrafiabir01/image-project/blob/main/naisproduct.png?raw=true",
-        4,
-        200,
-        0.1),
+        "Stylish Green Shirt",
+        "https://purepng.com/public/uploads/large/purepng.com-green-t-shirtclothingt-shirtt-shirtdressfashionclothshirt-691522330493iyjsl.png",
+        5,
+        240,
+        0.1,
+        "22%",
+        400),
     custom_product_display(
-        "Product 2",
-        "https://purepng.com/public/uploads/large/white-tshirt-n0j.png",
-        4,
-        200,
-        0.1),
+        "Yellow Polo Shirt",
+        "https://purepng.com/public/uploads/large/purepng.com-yellow-polo-shirtpolo-shirtcottongarmentsfebricpurple-1421526392119beols.png",
+        5,
+        00,
+        0.1,
+        "100%",
+        1500),
     custom_product_display(
-        "Product 1",
-        "https://github.com/ashrafiabir01/image-project/blob/main/naisproduct.png?raw=true",
-        4,
-        200,
-        0.1),
+        "Stylish Red Shirt",
+        "https://purepng.com/public/uploads/large/purepng.com-t-shirtclothingt-shirtfashion-dress-shirt-cloth-tshirt-631522326894filwv.png",
+        5,
+        1990,
+        0.1,
+        "20%",
+        2300),
     custom_product_display(
-        "Product 2",
-        "https://purepng.com/public/uploads/large/white-tshirt-n0j.png",
-        4,
-        200,
-        0.1),
-    custom_product_display(
-        "Product 1",
-        "https://github.com/ashrafiabir01/image-project/blob/main/naisproduct.png?raw=true",
-        4,
-        200,
-        0.1),
-    custom_product_display(
-        "Product 2",
-        "https://purepng.com/public/uploads/large/white-tshirt-n0j.png",
-        4,
-        200,
-        0.1),
-    custom_product_display(
-        "Product 1",
-        "https://github.com/ashrafiabir01/image-project/blob/main/naisproduct.png?raw=true",
-        4,
-        200,
-        0.1),
-    custom_product_display(
-        "Product 2",
-        "https://purepng.com/public/uploads/large/white-tshirt-n0j.png",
-        4,
-        200,
-        0.1),
-    custom_product_display(
-        "Product 1",
-        "https://github.com/ashrafiabir01/image-project/blob/main/naisproduct.png?raw=true",
-        4,
-        200,
-        0.1),
-    custom_product_display(
-        "Product 2",
-        "https://purepng.com/public/uploads/large/white-tshirt-n0j.png",
-        4,
-        200,
-        0.1),
-    custom_product_display(
-        "Product 1",
-        "https://github.com/ashrafiabir01/image-project/blob/main/naisproduct.png?raw=true",
-        4,
-        200,
-        0.1),
-    custom_product_display(
-        "Product 2",
-        "https://purepng.com/public/uploads/large/white-tshirt-n0j.png",
-        4,
-        200,
-        0.1),
+        "Stylish Orenge Shirt",
+        "https://purepng.com/public/uploads/large/purepng.com-t-shirt-orangefashiondressshirtclothtshirtclothingt-shirt-orange-631522326912s0fqp.png",
+        5,
+        786,
+        0.1,
+        "30%",
+        1000),
   ];
   @override
   void initState() {
@@ -132,7 +102,7 @@ class _homepage_appState extends State<homepage_app> {
       bottomNavigationBar: custom_bottomnavigationbar(),
       body: DoubleBack(
         child: SafeArea(
-          child: Column(
+          child: ListView(
             children: [
               // Header Slider
               Container(
@@ -150,8 +120,7 @@ class _homepage_appState extends State<homepage_app> {
                           return Container(
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                                    image:
-                                        NetworkImage(sliderimageurl[context]),
+                                    image: AssetImage(sliderimageurl[context]),
                                     fit: BoxFit.fill),
                                 color: Color(0xffEDEFF0),
                                 borderRadius:
@@ -199,7 +168,7 @@ class _homepage_appState extends State<homepage_app> {
                     color: Color(0xffEDEFF0),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  height: hei / 4.5,
+                  height: hei / 6,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -210,14 +179,14 @@ class _homepage_appState extends State<homepage_app> {
                             InkWell(
                               onTap: () {},
                               child: Container(
-                                height: hei / 9,
+                                height: hei / 12,
                                 width: wid / 6,
                                 child: Column(
                                   children: [
                                     Image.asset(
                                       "assets/catimg1.png",
-                                      height: hei / 13,
-                                      width: wid / 6,
+                                      height: hei / 18,
+                                      width: wid / 9,
                                     ),
                                     Text(
                                       "Gifts",
@@ -233,14 +202,14 @@ class _homepage_appState extends State<homepage_app> {
                             InkWell(
                               onTap: () {},
                               child: Container(
-                                height: hei / 9,
+                                height: hei / 12,
                                 width: wid / 6,
                                 child: Column(
                                   children: [
                                     Image.asset(
                                       "assets/catimg2.png",
-                                      height: hei / 13,
-                                      width: wid / 6,
+                                      height: hei / 18,
+                                      width: wid / 9,
                                     ),
                                     Text(
                                       "Discounts",
@@ -256,14 +225,14 @@ class _homepage_appState extends State<homepage_app> {
                             InkWell(
                               onTap: () {},
                               child: Container(
-                                height: hei / 9,
+                                height: hei / 12,
                                 width: wid / 6,
                                 child: Column(
                                   children: [
                                     Image.asset(
                                       "assets/catimg3.png",
-                                      height: hei / 13,
-                                      width: wid / 6,
+                                      height: hei / 18,
+                                      width: wid / 9,
                                     ),
                                     Text(
                                       "Shirts",
@@ -279,14 +248,14 @@ class _homepage_appState extends State<homepage_app> {
                             InkWell(
                               onTap: () {},
                               child: Container(
-                                height: hei / 9,
+                                height: hei / 12,
                                 width: wid / 6,
                                 child: Column(
                                   children: [
                                     Image.asset(
                                       "assets/catimg4.png",
-                                      height: hei / 13,
-                                      width: wid / 6,
+                                      height: hei / 18,
+                                      width: wid / 9,
                                     ),
                                     Text(
                                       "Foods",
@@ -309,14 +278,14 @@ class _homepage_appState extends State<homepage_app> {
                             InkWell(
                               onTap: () {},
                               child: Container(
-                                height: hei / 9,
+                                height: hei / 12,
                                 width: wid / 6,
                                 child: Column(
                                   children: [
                                     Image.asset(
                                       "assets/catimg5.png",
-                                      height: hei / 13,
-                                      width: wid / 6,
+                                      height: hei / 18,
+                                      width: wid / 9,
                                     ),
                                     Text(
                                       "Health",
@@ -332,14 +301,14 @@ class _homepage_appState extends State<homepage_app> {
                             InkWell(
                               onTap: () {},
                               child: Container(
-                                height: hei / 9,
+                                height: hei / 12,
                                 width: wid / 6,
                                 child: Column(
                                   children: [
                                     Image.asset(
                                       "assets/catimg6.png",
-                                      height: hei / 13,
-                                      width: wid / 6,
+                                      height: hei / 18,
+                                      width: wid / 9,
                                     ),
                                     Text(
                                       "Live Tv",
@@ -355,14 +324,14 @@ class _homepage_appState extends State<homepage_app> {
                             InkWell(
                               onTap: () {},
                               child: Container(
-                                height: hei / 9,
+                                height: hei / 12,
                                 width: wid / 6,
                                 child: Column(
                                   children: [
                                     Image.asset(
                                       "assets/catimg7.png",
-                                      height: hei / 13,
-                                      width: wid / 6,
+                                      height: hei / 18,
+                                      width: wid / 9,
                                     ),
                                     Text(
                                       "Global",
@@ -378,14 +347,14 @@ class _homepage_appState extends State<homepage_app> {
                             InkWell(
                               onTap: () {},
                               child: Container(
-                                height: hei / 9,
+                                height: hei / 12,
                                 width: wid / 6,
                                 child: Column(
                                   children: [
                                     Image.asset(
                                       "assets/catimg8.png",
-                                      height: hei / 13,
-                                      width: wid / 6,
+                                      height: hei / 18,
+                                      width: wid / 9,
                                     ),
                                     Text(
                                       "Local",
@@ -432,26 +401,105 @@ class _homepage_appState extends State<homepage_app> {
                 ),
               ),
               // top product list
-              Expanded(
-                  child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: GridView.builder(
-                    itemCount: prouctname.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              GridView.builder(
+                  shrinkWrap: true,
+                  controller: ScrollController(keepScrollOffset: true),
+                  itemCount: prouctname.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      childAspectRatio: 0.60,
                       crossAxisCount: 2,
-                    ),
-                    itemBuilder: (Buildercontext, context) {
-                      return Container(
-                        child: Card(
+                      crossAxisSpacing: 6),
+                  itemBuilder: (Buildercontext, context) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15)),
+                        elevation: 20,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Image.network(prouctname[context].imgurl),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  CircleAvatar(
+                                    backgroundColor: Color(0xFF505050),
+                                    child: Text(
+                                      prouctname[context].parcentage,
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                  IconButton(
+                                      icon: Icon(Icons.favorite_border,
+                                          size: hei / 23),
+                                      onPressed: () {})
+                                ],
+                              ),
+                              Image.network(prouctname[context].imgurl,height: hei/5.2,width: wid/2.5,),
+                              SizedBox(
+                                height: hei / 140,
+                              ),
+                              Text(prouctname[context].title,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                      fontSize: hei / 45,
+                                      fontWeight: FontWeight.bold)),
+                              SizedBox(
+                                height: hei / 140,
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: wid / 70,
+                                  ),
+                                  Text(
+                                    "৳" +
+                                        prouctname[context].proprice.toString(),
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.orange,
+                                        fontSize: hei / 33),
+                                  ),
+                                  SizedBox(
+                                    width: wid / 77,
+                                  ),
+                                  Text(
+                                    "৳" + prouctname[context].price.toString(),
+                                    style: TextStyle(
+                                        decoration: TextDecoration.lineThrough,
+                                        decorationThickness: 2.0,
+                                        fontSize: hei / 50),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Container(
+                                    child: RatingBarIndicator(
+                                      rating: prouctname[context].rating,
+                                      itemBuilder: (context, index) => Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                      ),
+                                      itemCount: 5,
+                                      itemSize: 16.0,
+                                      direction: Axis.horizontal,
+                                    ),
+                                  ),
+                                  Text("[${prouctname[context].proprice}]")
+                                ],
+                              ),
                             ],
                           ),
                         ),
-                      );
-                    }),
-              ))
+                      ),
+                    );
+                  })
             ],
           ),
         ),

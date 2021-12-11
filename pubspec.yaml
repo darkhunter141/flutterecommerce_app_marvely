@@ -27,12 +27,6 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  fluttertoast: ^8.0.8
-  google_fonts: ^2.1.0
-  date_time_picker: ^2.1.0
-  sign_button: ^2.0.2
-  google_sign_in: ^5.2.1
-  firebase_auth: ^3.3.0
   flutter:
     sdk: flutter
 
@@ -43,6 +37,13 @@ dependencies:
   shared_preferences: ^2.0.9
   double_back_to_close: ^2.0.0
   flutter_carousel_slider: ^1.0.8
+  flutter_rating_bar: ^4.0.0
+  fluttertoast: ^8.0.8
+  google_fonts: ^2.1.0
+  date_time_picker: ^2.1.0
+  sign_button: ^2.0.2
+  google_sign_in: ^5.2.1
+  firebase_auth: ^3.3.0
 
 dev_dependencies:
   flutter_test:
