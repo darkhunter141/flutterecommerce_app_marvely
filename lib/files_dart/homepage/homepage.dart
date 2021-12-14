@@ -7,6 +7,8 @@ import 'package:marvelyprojects/custom_widgets/custom_drawer.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:marvelyprojects/custom_widgets/custom_product_display.dart';
+import 'package:marvelyprojects/files_dart/product_details/custom_product_details.dart';
+import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 class homepage_app extends StatefulWidget {
   @override
@@ -107,7 +109,7 @@ class _homepage_appState extends State<homepage_app> {
               // Header Slider
               Container(
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding:EdgeInsets.only(top: hei/150,left: wid/75,right: wid/75,bottom: hei/150),
                   child: Container(
                     height: hei / 6,
                     child: CarouselSlider.builder(
@@ -133,28 +135,26 @@ class _homepage_appState extends State<homepage_app> {
                 ),
               ),
               // CategoryText
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 5, bottom: 10),
+              Padding(
+                padding:EdgeInsets.only(top: hei/150,left: wid/75,right: wid/75,bottom: hei/150),
+                child: Container(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         "Top Catagory",
                         style: TextStyle(
-                            fontSize: hei / 38, fontWeight: FontWeight.bold),
+                            fontSize: hei / 40, fontWeight: FontWeight.bold),
                       ),
                       InkWell(
                         onTap: () {},
-                        child: Padding(
-                            padding: const EdgeInsets.only(right: 20),
-                            child: Text(
-                              "More",
-                              style: TextStyle(
-                                  fontSize: hei / 45,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.orange),
-                            )),
+                        child: Text(
+                          "More",
+                          style: TextStyle(
+                              fontSize: hei / 45,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.orange),
+                        ),
                       )
                     ],
                   ),
@@ -162,13 +162,13 @@ class _homepage_appState extends State<homepage_app> {
               ),
               // Category button
               Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10),
+                padding:EdgeInsets.only(top: hei/150,left: wid/75,right: wid/75,bottom: hei/150),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Color(0xffEDEFF0),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  height: hei / 6,
+                  height: hei / 5,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -178,24 +178,27 @@ class _homepage_appState extends State<homepage_app> {
                           children: [
                             InkWell(
                               onTap: () {},
-                              child: Container(
-                                height: hei / 12,
-                                width: wid / 6,
-                                child: Column(
-                                  children: [
-                                    Image.asset(
-                                      "assets/catimg1.png",
-                                      height: hei / 18,
-                                      width: wid / 9,
-                                    ),
-                                    Text(
-                                      "Gifts",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: hei / 55,
-                                          fontWeight: FontWeight.bold),
-                                    )
-                                  ],
+                              child: Padding(
+                                padding:EdgeInsets.only(top: hei/100,left: wid/75,right: wid/75,bottom: hei/150),
+                                child: Container(
+                                  height: hei / 12,
+                                  width: wid / 6,
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        "assets/catimg1.png",
+                                        height: hei / 17,
+                                        width: wid / 8,
+                                      ),
+                                      Text(
+                                        "Gifts",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: hei / 55,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -208,8 +211,8 @@ class _homepage_appState extends State<homepage_app> {
                                   children: [
                                     Image.asset(
                                       "assets/catimg2.png",
-                                      height: hei / 18,
-                                      width: wid / 9,
+                                      height: hei / 17,
+                                      width: wid / 8,
                                     ),
                                     Text(
                                       "Discounts",
@@ -231,8 +234,8 @@ class _homepage_appState extends State<homepage_app> {
                                   children: [
                                     Image.asset(
                                       "assets/catimg3.png",
-                                      height: hei / 18,
-                                      width: wid / 9,
+                                      height: hei / 17,
+                                      width: wid / 8,
                                     ),
                                     Text(
                                       "Shirts",
@@ -254,8 +257,8 @@ class _homepage_appState extends State<homepage_app> {
                                   children: [
                                     Image.asset(
                                       "assets/catimg4.png",
-                                      height: hei / 18,
-                                      width: wid / 9,
+                                      height: hei / 17,
+                                      width: wid / 8,
                                     ),
                                     Text(
                                       "Foods",
@@ -284,8 +287,8 @@ class _homepage_appState extends State<homepage_app> {
                                   children: [
                                     Image.asset(
                                       "assets/catimg5.png",
-                                      height: hei / 18,
-                                      width: wid / 9,
+                                      height: hei / 17,
+                                      width: wid / 8,
                                     ),
                                     Text(
                                       "Health",
@@ -307,8 +310,8 @@ class _homepage_appState extends State<homepage_app> {
                                   children: [
                                     Image.asset(
                                       "assets/catimg6.png",
-                                      height: hei / 18,
-                                      width: wid / 9,
+                                      height: hei / 17,
+                                      width: wid / 8,
                                     ),
                                     Text(
                                       "Live Tv",
@@ -330,8 +333,8 @@ class _homepage_appState extends State<homepage_app> {
                                   children: [
                                     Image.asset(
                                       "assets/catimg7.png",
-                                      height: hei / 18,
-                                      width: wid / 9,
+                                      height: hei / 17,
+                                      width: wid / 8,
                                     ),
                                     Text(
                                       "Global",
@@ -353,8 +356,8 @@ class _homepage_appState extends State<homepage_app> {
                                   children: [
                                     Image.asset(
                                       "assets/catimg8.png",
-                                      height: hei / 18,
-                                      width: wid / 9,
+                                      height: hei / 17,
+                                      width: wid / 8,
                                     ),
                                     Text(
                                       "Local",
@@ -376,7 +379,7 @@ class _homepage_appState extends State<homepage_app> {
               ),
               // top products
               Padding(
-                padding: const EdgeInsets.only(left: 20, top: 5, bottom: 10),
+                padding:EdgeInsets.only(top: hei/150,left: wid/75,right: wid/75,bottom: hei/150),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -387,15 +390,13 @@ class _homepage_appState extends State<homepage_app> {
                     ),
                     InkWell(
                       onTap: () {},
-                      child: Padding(
-                          padding: const EdgeInsets.only(right: 20),
-                          child: Text(
-                            "More",
-                            style: TextStyle(
-                                fontSize: hei / 45,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.orange),
-                          )),
+                      child: Text(
+                        "More",
+                        style: TextStyle(
+                            fontSize: hei / 45,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.orange),
+                      ),
                     )
                   ],
                 ),
@@ -406,42 +407,49 @@ class _homepage_appState extends State<homepage_app> {
                   controller: ScrollController(keepScrollOffset: true),
                   itemCount: prouctname.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      childAspectRatio: 0.60,
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 6),
-                  itemBuilder: (Buildercontext, context) {
+                      childAspectRatio: 0.62,
+                      crossAxisCount: 2),
+                  itemBuilder: (Buildercontext, index) {
                     return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        elevation: 20,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                      padding:EdgeInsets.only(left: wid/75,right: wid/75,bottom: hei/150),
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.of(context).push(SwipeablePageRoute(
+                            canOnlySwipeFromEdge: true,
+                            builder: (BuildContext context) => customproduct_details(prouctname[index])
+                          ));
+                        },
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                          elevation: 20,
                           child: Column(
                             children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  CircleAvatar(
-                                    backgroundColor: Color(0xFF505050),
-                                    child: Text(
-                                      prouctname[context].parcentage,
-                                      style: TextStyle(color: Colors.white),
+                              Padding(
+                                padding:EdgeInsets.only(top: hei/150,left: wid/75,right: wid/75,bottom: hei/150),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    CircleAvatar(
+                                      backgroundColor: Color(0xFF505050),
+                                      child: Text(
+                                        prouctname[index].parcentage,
+                                        style: TextStyle(color: Colors.white),
+                                      ),
                                     ),
-                                  ),
-                                  IconButton(
-                                      icon: Icon(Icons.favorite_border,
-                                          size: hei / 23),
-                                      onPressed: () {})
-                                ],
+                                    IconButton(
+                                        icon: Icon(Icons.favorite_border,
+                                            size: hei / 23),
+                                        onPressed: () {})
+                                  ],
+                                ),
                               ),
-                              Image.network(prouctname[context].imgurl,height: hei/5.2,width: wid/2.5,),
+                              Image.network(prouctname[index].imgurl,height: hei/5.2,width: wid/2.5,),
                               SizedBox(
                                 height: hei / 140,
                               ),
-                              Text(prouctname[context].title,
+                              Text(prouctname[index].title,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -450,30 +458,33 @@ class _homepage_appState extends State<homepage_app> {
                               SizedBox(
                                 height: hei / 140,
                               ),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    width: wid / 70,
-                                  ),
-                                  Text(
-                                    "৳" +
-                                        prouctname[context].proprice.toString(),
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.orange,
-                                        fontSize: hei / 33),
-                                  ),
-                                  SizedBox(
-                                    width: wid / 77,
-                                  ),
-                                  Text(
-                                    "৳" + prouctname[context].price.toString(),
-                                    style: TextStyle(
-                                        decoration: TextDecoration.lineThrough,
-                                        decorationThickness: 2.0,
-                                        fontSize: hei / 50),
-                                  ),
-                                ],
+                              Padding(
+                                padding:EdgeInsets.only(left: wid/30),
+                                child: Row(
+                                  children: [
+                                    SizedBox(
+                                      width: wid / 70,
+                                    ),
+                                    Text(
+                                      "৳" +
+                                          prouctname[index].proprice.toString(),
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.orange,
+                                          fontSize: hei / 33),
+                                    ),
+                                    SizedBox(
+                                      width: wid / 77,
+                                    ),
+                                    Text(
+                                      "৳" + prouctname[index].price.toString(),
+                                      style: TextStyle(
+                                          decoration: TextDecoration.lineThrough,
+                                          decorationThickness: 2.0,
+                                          fontSize: hei / 50),
+                                    ),
+                                  ],
+                                ),
                               ),
                               Row(
                                 mainAxisAlignment:
@@ -481,7 +492,7 @@ class _homepage_appState extends State<homepage_app> {
                                 children: [
                                   Container(
                                     child: RatingBarIndicator(
-                                      rating: prouctname[context].rating,
+                                      rating: prouctname[index].rating,
                                       itemBuilder: (context, index) => Icon(
                                         Icons.star,
                                         color: Colors.amber,
@@ -491,7 +502,7 @@ class _homepage_appState extends State<homepage_app> {
                                       direction: Axis.horizontal,
                                     ),
                                   ),
-                                  Text("[${prouctname[context].proprice}]")
+                                  Text("[${prouctname[index].proprice}]")
                                 ],
                               ),
                             ],
