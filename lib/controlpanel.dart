@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:marvelyprojects/custom_widgets/custom_appbar.dart';
 import 'package:marvelyprojects/custom_widgets/custom_drawer.dart';
 import 'package:marvelyprojects/files_dart/homepage/homepage.dart';
 import 'package:marvelyprojects/files_dart/profile/profiles.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
-class custom_bottomnavigationbar extends StatefulWidget {
+class main_controlpanel extends StatefulWidget {
+  const main_controlpanel({Key? key}) : super(key: key);
+
   @override
-  _custom_bottomnavigationbarState createState() =>
-      _custom_bottomnavigationbarState();
+  _main_controlpanelState createState() => _main_controlpanelState();
 }
 
-class _custom_bottomnavigationbarState
-    extends State<custom_bottomnavigationbar> {
+class _main_controlpanelState extends State<main_controlpanel> {
   int _index_position = 0;
-  final tabs = [homepage_app(),homepage_app(),homepage_app(), profile()];
+  final tabs = [homepage_app(), homepage_app(), homepage_app(), profile()];
   @override
   Widget build(BuildContext context) {
     var hei = MediaQuery.of(context).size.height;
     var wid = MediaQuery.of(context).size.width;
-    return Scaffold(
 
+
+
+
+    return Scaffold(
+      drawer: custom_drawer(),
       bottomNavigationBar: BottomNavigationBar(
           showUnselectedLabels: false,
           selectedItemColor: Colors.orange,

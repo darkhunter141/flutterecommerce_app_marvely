@@ -181,26 +181,6 @@ class _profileState extends State<profile> {
         ),
       ),
 
-      // body: SafeArea(
-      //   child: ListView(
-      //     children: [
-      //       Container(
-      //
-      //         color: Color(0xFF505050),
-      //         height: hei/3,
-      //         child: gender_value == 2 ? Text("Female") : Text("Male"),
-      //       ),
-      //       Text("$username_value"),
-      //       Text("$name_value"),
-      //       Text("$email_value"),
-      //       Text("$pass_value"),
-      //       Text("$day_value $month_value $year_value"),
-      //       Container(
-      //         child: gender_value == 2 ? Text("Female") : Text("Male"),
-      //       )
-      //     ],
-      //   ),
-      // ),
     );
   }
 }

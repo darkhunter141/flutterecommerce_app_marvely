@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:marvelyprojects/files_dart/product_details/custom_product_display.dart';
 import 'package:marvelyprojects/files_dart/homepage/productinformation.dart';
 import 'package:marvelyprojects/files_dart/product_details/custom_product_details.dart';
+import 'package:marvelyprojects/files_dart/profile/profiles.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 class homepage_app extends StatefulWidget {
@@ -29,16 +30,15 @@ class _homepage_appState extends State<homepage_app> {
 
   @override
   void initState() {
-    // TODO: implement initState
   }
+
   @override
   Widget build(BuildContext context) {
     var hei = MediaQuery.of(context).size.height;
     var wid = MediaQuery.of(context).size.width;
     return Scaffold(
-      drawer: custom_drawer(),
       appBar: CustomAppBar(),
-      bottomNavigationBar: custom_bottomnavigationbar(),
+      drawer: custom_drawer(),
       body: DoubleBack(
         child: SafeArea(
           child: ListView(

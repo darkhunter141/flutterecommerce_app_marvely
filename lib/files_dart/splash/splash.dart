@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:marvelyprojects/controlpanel.dart';
 import 'package:marvelyprojects/files_dart/aurth_app/authpage.dart';
 import 'package:marvelyprojects/files_dart/homepage/homepage.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class _splashState extends State<splash> {
     Timer(Duration(seconds: 2), () {
       if  (pageopen=="1"){
       //  Navigator.push(context, MaterialPageRoute(builder: (context)=>homepage_app()));
-        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>homepage_app()));
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>main_controlpanel()));
 
       }
       else{

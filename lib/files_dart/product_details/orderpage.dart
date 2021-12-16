@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:marvelyprojects/controlpanel.dart';
 import 'package:marvelyprojects/custom_widgets/custom_bottomnavigationbar.dart';
+import 'package:marvelyprojects/files_dart/homepage/homepage.dart';
 import 'package:marvelyprojects/files_dart/product_details/custom_product_display.dart';
+import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 class oder_now extends StatefulWidget {
   final custom_product_display selected_product;
@@ -17,7 +20,6 @@ class _oder_nowState extends State<oder_now> {
   Widget build(BuildContext context) {
     var hei = MediaQuery.of(context).size.height;
     return Scaffold(
-      bottomNavigationBar: custom_bottomnavigationbar(),
       body: SafeArea(
         child: ListView(
           children: [
@@ -80,6 +82,15 @@ class _oder_nowState extends State<oder_now> {
                 ),
               ),
             ),
+            Center(
+              child: Container(
+                width: 200,
+                  child: ElevatedButton(onPressed: (){
+                    Navigator.of(context).push(SwipeablePageRoute(
+                        canOnlySwipeFromEdge: true,
+                        builder: (BuildContext context) =>main_controlpanel()));
+                  }, child:Text ("Back to home"))),
+            )
           ],
         ),
       ),
