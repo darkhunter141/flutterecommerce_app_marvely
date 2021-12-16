@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "977327938842",
+    "project_id": "flutter-marvely-projetc",
+    "storage_bucket": "flutter-marvely-projetc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977327938842:android:bf5edd33070ede69e6a0a3",
+        "android_client_info": {
+          "package_name": "com.marvelyprojects.main.marvelyprojects"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977327938842-1kuodppqb0vjdmjk0v8v15nilf9vf43k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWlBdCKYtuVxjGA01JlILHDLqD2angnKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "977327938842-1kuodppqb0vjdmjk0v8v15nilf9vf43k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

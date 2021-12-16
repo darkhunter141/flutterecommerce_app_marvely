@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:marvelyprojects/custom_widgets/custom_product_display.dart';
+import 'package:marvelyprojects/files_dart/product_details/custom_product_display.dart';
+import 'package:marvelyprojects/files_dart/product_details/orderpage.dart';
 
 class customproduct_details extends StatefulWidget {
   final custom_product_display product_details;
@@ -42,6 +43,229 @@ class _customproduct_detailsState extends State<customproduct_details> {
   Widget build(BuildContext context) {
     var hei = MediaQuery.of(context).size.height;
     var wid = MediaQuery.of(context).size.width;
+
+    show_cart(){
+      showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return StatefulBuilder(builder:
+                (BuildContext context, StateSetter setState) {
+              return Container(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          height: hei / 10,
+                          width: wid / 5,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Image.network(
+                              widget.product_details.imgurl),
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              "৳" +
+                                  widget.product_details.proprice
+                                      .toString(),
+                              style: TextStyle(
+                                  fontSize: hei / 35,
+                                  color: Colors.orange),
+                            ),
+                            Text(
+                              "৳" +
+                                  widget.product_details.price
+                                      .toString(),
+                              style: TextStyle(
+                                  fontSize: hei / 43,
+                                  decoration:
+                                  TextDecoration.lineThrough,
+                                  decorationThickness: 1.6),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: wid / 2,
+                        ),
+                        IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(
+                              Icons.cancel,
+                              size: hei / 25,
+                            ))
+                      ],
+                    ),
+                    SizedBox(height: hei / 40),
+                    Divider(
+                      thickness: 2,
+                    ),
+                    SizedBox(height: hei / 40),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: hei / 150,
+                          left: wid / 75,
+                          right: wid / 75,
+                          bottom: hei / 150),
+                      child: Row(
+                        mainAxisAlignment:
+                        MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Quantity",
+                            style: TextStyle(fontSize: hei / 43),
+                          ),
+                          Row(
+                            children: [
+                              IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      product_cart--;
+                                      cheacknumber();
+                                      total_product_value =
+                                          total_product_value -
+                                              widget.product_details
+                                                  .proprice;
+                                      cheackvalue();
+                                    });
+                                  },
+                                  icon: CircleAvatar(
+                                    maxRadius: 20,
+                                    child: Text(
+                                      "-",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 24),
+                                    ),
+                                    backgroundColor: Colors.black,
+                                  )),
+
+                              SizedBox(width: 5),
+                              Text(
+                                "$product_cart",
+                                style: TextStyle(
+                                    color: Colors.orange,
+                                    fontSize: hei / 40),
+                              ),
+                              SizedBox(width: 5),
+                              IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      product_cart++;
+                                      total_product_value = widget
+                                          .product_details
+                                          .proprice *
+                                          product_cart;
+                                    });
+                                  },
+                                  icon: CircleAvatar(
+                                    child: Text(
+                                      "+",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 24),
+                                    ),
+                                    maxRadius: 20,
+                                    backgroundColor: Colors.black,
+                                  )),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: hei / 40),
+                    Divider(
+                      thickness: 2,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: hei / 150,
+                          left: wid / 75,
+                          right: wid / 75,
+                          bottom: hei / 150),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Total : ",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Text(
+                            "৳" + "$total_product_value",
+                            style: TextStyle(
+                                fontSize: 24, color: Colors.orange),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: hei / 7,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: hei / 150,
+                          left: wid / 75,
+                          right: wid / 75,
+                          bottom: hei / 150),
+                      child: Row(
+                        mainAxisAlignment:
+                        MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: wid / 2.2,
+                            height: hei / 15,
+                            decoration: BoxDecoration(
+                                borderRadius:
+                                BorderRadius.circular(6),
+                                color: Colors.redAccent),
+                            child: Center(
+                              child: Text(
+                                "Add to Cart",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: hei / 42,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>oder_now(widget.product_details,total_product_value)));
+                            },
+                            child: Container(
+                              width: wid / 2.2,
+                              height: hei / 15,
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                  BorderRadius.circular(6),
+                                  color: Colors.orange),
+                              child: Center(
+                                child: Text(
+                                  "Buy Now",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: hei / 42,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+              ;
+            });
+          });
+    }
+
+
     return Scaffold(
       backgroundColor: Colors.white,
       bottomNavigationBar: BottomAppBar(
@@ -69,219 +293,7 @@ class _customproduct_detailsState extends State<customproduct_details> {
               SizedBox(width: wid / 13),
               InkWell(
                 onTap: () {
-                  showModalBottomSheet(
-                      context: context,
-                      builder: (context) {
-                        return StatefulBuilder(builder:
-                            (BuildContext context, StateSetter setState) {
-                          return Container(
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      height: hei / 10,
-                                      width: wid / 5,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      child: Image.network(
-                                          widget.product_details.imgurl),
-                                    ),
-                                    Column(
-                                      children: [
-                                        Text(
-                                          "৳" +
-                                              widget.product_details.proprice
-                                                  .toString(),
-                                          style: TextStyle(
-                                              fontSize: hei / 35,
-                                              color: Colors.orange),
-                                        ),
-                                        Text(
-                                          "৳" +
-                                              widget.product_details.price
-                                                  .toString(),
-                                          style: TextStyle(
-                                              fontSize: hei / 43,
-                                              decoration:
-                                                  TextDecoration.lineThrough,
-                                              decorationThickness: 1.6),
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      width: wid / 2,
-                                    ),
-                                    IconButton(
-                                        onPressed: () {
-                                          Navigator.pop(context);
-                                        },
-                                        icon: Icon(
-                                          Icons.cancel,
-                                          size: hei / 25,
-                                        ))
-                                  ],
-                                ),
-                                SizedBox(height: hei / 40),
-                                Divider(
-                                  thickness: 2,
-                                ),
-                                SizedBox(height: hei / 40),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      top: hei / 150,
-                                      left: wid / 75,
-                                      right: wid / 75,
-                                      bottom: hei / 150),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "Quantity",
-                                        style: TextStyle(fontSize: hei / 43),
-                                      ),
-                                      Row(
-                                        children: [
-                                          IconButton(
-                                              onPressed: () {
-                                                setState(() {
-                                                  product_cart--;
-                                                  cheacknumber();
-                                                  total_product_value =
-                                                      total_product_value -
-                                                          widget.product_details
-                                                              .proprice;
-                                                  cheackvalue();
-                                                });
-                                              },
-                                              icon: CircleAvatar(
-                                                maxRadius: 20,
-                                                child: Text(
-                                                  "-",
-                                                  style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 24),
-                                                ),
-                                                backgroundColor: Colors.black,
-                                              )),
-
-                                          SizedBox(width: 5),
-                                          Text(
-                                            "$product_cart",
-                                            style: TextStyle(
-                                                color: Colors.orange,
-                                                fontSize: hei / 40),
-                                          ),
-                                          SizedBox(width: 5),
-                                          IconButton(
-                                              onPressed: () {
-                                                setState(() {
-                                                  product_cart++;
-                                                  total_product_value = widget
-                                                      .product_details
-                                                      .proprice *
-                                                      product_cart;
-                                                });
-                                              },
-                                              icon: CircleAvatar(
-                                                child: Text(
-                                                  "+",
-                                                  style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 24),
-                                                ),
-                                                maxRadius: 20,
-                                                backgroundColor: Colors.black,
-                                              )),
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(height: hei / 40),
-                                Divider(
-                                  thickness: 2,
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      top: hei / 150,
-                                      left: wid / 75,
-                                      right: wid / 75,
-                                      bottom: hei / 150),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        "Total : ",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
-                                      Text(
-                                        "৳" + "$total_product_value",
-                                        style: TextStyle(
-                                            fontSize: 24, color: Colors.orange),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: hei / 7,
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      top: hei / 150,
-                                      left: wid / 75,
-                                      right: wid / 75,
-                                      bottom: hei / 150),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Container(
-                                        width: wid / 2.2,
-                                        height: hei / 15,
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(6),
-                                            color: Colors.redAccent),
-                                        child: Center(
-                                          child: Text(
-                                            "Add to Cart",
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: hei / 42,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        width: wid / 2.2,
-                                        height: hei / 15,
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(6),
-                                            color: Colors.orange),
-                                        child: Center(
-                                          child: Text(
-                                            "Buy Now",
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: hei / 42,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-                          ;
-                        });
-                      });
+                 show_cart();
                 },
                 child: Container(
                   width: wid / 3.5,
@@ -302,21 +314,26 @@ class _customproduct_detailsState extends State<customproduct_details> {
                 ),
               ),
               SizedBox(width: wid / 40),
-              Padding(
-                padding: EdgeInsets.only(right: wid / 50),
-                child: Container(
-                  width: wid / 3.5,
-                  height: hei / 15,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                      color: Colors.orange),
-                  child: Center(
-                    child: Text(
-                      "Buy Now",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: hei / 42,
-                        fontWeight: FontWeight.bold,
+              InkWell(
+                onTap: (){
+                  show_cart();
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(right: wid / 50),
+                  child: Container(
+                    width: wid / 3.5,
+                    height: hei / 15,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        color: Colors.orange),
+                    child: Center(
+                      child: Text(
+                        "Buy Now",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: hei / 42,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
