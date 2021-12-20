@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:marvelyprojects/custom_widgets/custom_appbar.dart';
 import 'package:marvelyprojects/custom_widgets/custom_drawer.dart';
+import 'package:marvelyprojects/files_dart/cart/cart.dart';
 import 'package:marvelyprojects/files_dart/homepage/homepage.dart';
 import 'package:marvelyprojects/files_dart/profile/profiles.dart';
+
+import 'files_dart/notificationspage/notification.dart';
 
 class main_controlpanel extends StatefulWidget {
   const main_controlpanel({Key? key}) : super(key: key);
@@ -13,7 +16,7 @@ class main_controlpanel extends StatefulWidget {
 
 class _main_controlpanelState extends State<main_controlpanel> {
   int _index_position = 0;
-  final tabs = [homepage_app(), homepage_app(), homepage_app(), profile()];
+  final tabs = [homepage_app(), notification(), cart(), profile()];
   @override
   Widget build(BuildContext context) {
     var hei = MediaQuery.of(context).size.height;

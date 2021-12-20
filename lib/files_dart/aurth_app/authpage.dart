@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:marvelyprojects/controlpanel.dart';
 import 'package:marvelyprojects/files_dart/homepage/homepage.dart';
 import 'package:marvelyprojects/files_dart/aurth_app/passwordreset.dart';
 import 'package:marvelyprojects/files_dart/aurth_app/signup.dart';
@@ -174,7 +175,7 @@ class _authState extends State<auth> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => homepage_app()));
+                                        builder: (context) => main_controlpanel()));
                               } else {
                                 Fluttertoast.showToast(
                                     msg:
@@ -239,10 +240,7 @@ class _authState extends State<auth> {
                                 buttonSize: ButtonSize.medium,
                                 buttonType: ButtonType.google,
                                 onPressed: () {
-                                  _googleSignUp().then((value) => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => homepage_app())));
+                                  _googleSignUp();
                                 }),
                             SignInButton.mini(
                                 buttonSize: ButtonSize.medium,
