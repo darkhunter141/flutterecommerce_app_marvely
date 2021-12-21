@@ -1,14 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:marvelyprojects/controlpanel.dart';
-import 'package:marvelyprojects/files_dart/homepage/homepage.dart';
-import 'package:marvelyprojects/files_dart/aurth_app/passwordreset.dart';
-import 'package:marvelyprojects/files_dart/aurth_app/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:marvelyprojects/files_dart/aurth_app/passwordreset.dart';
+import 'package:marvelyprojects/files_dart/aurth_app/signup.dart';
+import 'package:marvelyprojects/files_dart/aurth_app/tow_step_verification.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sign_button/sign_button.dart';
+import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 class auth extends StatefulWidget {
   @override
@@ -171,11 +171,10 @@ class _authState extends State<auth> {
                               } else if (user_con.text == us &&
                                   pass_con.text == ps) {
                                 setpageopen();
-                                Fluttertoast.showToast(msg: "Sign in approved");
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => main_controlpanel()));
+                                Fluttertoast.showToast(msg: "Correct Password");
+                                Navigator.of(context).push(SwipeablePageRoute(
+                                    canOnlySwipeFromEdge: true,
+                                    builder: (BuildContext context) =>tow_step()));
                               } else {
                                 Fluttertoast.showToast(
                                     msg:

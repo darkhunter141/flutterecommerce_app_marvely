@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'package:marvelyprojects/controlpanel.dart';
-import 'package:marvelyprojects/files_dart/aurth_app/authpage.dart';
-import 'package:marvelyprojects/files_dart/homepage/homepage.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:marvelyprojects/controlpanel.dart';
+import 'package:marvelyprojects/files_dart/aurth_app/authpage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 class splash extends StatefulWidget {
 
@@ -34,7 +34,6 @@ class _splashState extends State<splash> {
     final prefersget = await SharedPreferences.getInstance();
     setState(() {
      pageopen = prefersget.getString("pagedecidevalue")!;
-
 
     });
 

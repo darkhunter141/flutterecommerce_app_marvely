@@ -10,7 +10,7 @@ class notification extends StatefulWidget {
 }
 
 class _notificationState extends State<notification> {
-  final _url = "http://ipwhois.app/json/27.123.254.138";
+  final _url = "https://raw.githubusercontent.com/ashrafiabir01/databse_test/main/notification.json";
   var g_data = [];
   @override
   void initState() {
@@ -20,24 +20,33 @@ class _notificationState extends State<notification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-          itemCount: g_data.length,
-          itemBuilder: (context, index){
-            final load = g_data[index];
-            return Card(
-              elevation: 20,
-              child: ListTile(
-                title: Text('Title : ${load['ip']}'),
-              ),
-            );
-          }),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView.builder(
+            itemCount: g_data.length,
+            itemBuilder: (context, index){
+              final load = g_data[index];
+              return Card(
+                elevation: 20,
+                child: ListTile(
+                  leading: Icon(Icons.notifications),
+                  title: Text('${load['title']}',style: TextStyle(
+                    fontSize: 20
+                  ),),
+                  subtitle:Text('${load['subtitle']}',style: TextStyle(
+                      fontSize: 20
+                  ),),
+                ),
+              );
+            }),
+      ),
     );
   }
 
   getdata_database() async {
     try {
       final response = await http.get(Uri.parse(_url));
-      final jsondata =response.body as List;
+      final jsondata =jsonDecode(response.body) as List;
 
       setState(() {
         g_data = jsondata;

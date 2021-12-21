@@ -148,7 +148,7 @@ class _customproduct_detailsState extends State<customproduct_details> {
                                 "$product_cart",
                                 style: TextStyle(
                                     color: Colors.orange,
-                                    fontSize: hei / 40),
+                                    fontSize: hei / 30),
                               ),
                               SizedBox(width: 5),
                               IconButton(

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:marvelyprojects/files_dart/homepage/homepage.dart';
+import 'package:marvelyprojects/controlpanel.dart';
+import 'package:marvelyprojects/files_dart/profile/profiles.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sign_button/constants.dart';
-import 'package:sign_button/create_button.dart';
 
 class custom_drawer extends StatefulWidget {
   const custom_drawer({Key? key}) : super(key: key);
@@ -79,7 +77,7 @@ class _custom_drawerState extends State<custom_drawer> {
                 padding: const EdgeInsets.all(8.0),
                 child: ListTile(
                   onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>homepage_app()));
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>main_controlpanel()));
                   },
                   leading:
                       Icon(Icons.home, size: hei / 24, color: Colors.white),
@@ -91,7 +89,9 @@ class _custom_drawerState extends State<custom_drawer> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>profile()));
+                  },
                   leading: Icon(Icons.account_circle,
                       size: hei / 24, color: Colors.white),
                   title: Text("My Profile",
@@ -100,7 +100,7 @@ class _custom_drawerState extends State<custom_drawer> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding:EdgeInsets.all(8.0),
                 child: ListTile(
                   onTap: () {},
                   leading: Icon(Icons.shopping_cart,

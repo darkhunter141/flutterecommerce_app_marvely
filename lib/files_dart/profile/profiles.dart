@@ -1,8 +1,9 @@
-import 'package:double_back_to_close/double_back_to_close.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:marvelyprojects/custom_widgets/custom_drawer.dart';
+import 'package:marvelyprojects/files_dart/aurth_app/authpage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 class profile extends StatefulWidget {
   @override
@@ -25,6 +26,10 @@ class _profileState extends State<profile> {
   }
 
   @override
+  setpageopen() async {
+    final preferset = await SharedPreferences.getInstance();
+    preferset.setString("pagedecidevalue","0");
+  }
   showperfer() async {
     final showdata = await SharedPreferences.getInstance();
     setState(() {
@@ -151,7 +156,13 @@ class _profileState extends State<profile> {
                           )),),
                         ),
                       ),
-                      TextButton(onPressed: (){},
+                      TextButton(onPressed: (){
+                        Navigator.of(context).pushReplacement(SwipeablePageRoute(
+                            canOnlySwipeFromEdge: true,
+                            builder: (BuildContext context) =>auth()));
+                        setpageopen();
+
+                      },
                         child: ListTile(
                           leading: Icon (Icons.exit_to_app_outlined,size: hei/23),
                           trailing:  Icon (Icons.arrow_forward ,size: hei/23),

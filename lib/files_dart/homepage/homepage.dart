@@ -1,15 +1,12 @@
 import 'package:double_back_to_close/double_back_to_close.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:flutter_carousel_slider/carousel_slider_transforms.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:marvelyprojects/custom_widgets/custom_appbar.dart';
-import 'package:marvelyprojects/custom_widgets/custom_bottomnavigationbar.dart';
 import 'package:marvelyprojects/custom_widgets/custom_drawer.dart';
-import 'package:flutter_carousel_slider/carousel_slider.dart';
-import 'package:flutter/material.dart';
-import 'package:marvelyprojects/files_dart/product_details/custom_product_display.dart';
 import 'package:marvelyprojects/files_dart/homepage/productinformation.dart';
 import 'package:marvelyprojects/files_dart/product_details/custom_product_details.dart';
-import 'package:marvelyprojects/files_dart/profile/profiles.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 class homepage_app extends StatefulWidget {
@@ -29,8 +26,7 @@ class _homepage_appState extends State<homepage_app> {
   ];
 
   @override
-  void initState() {
-  }
+  void initState() {}
 
   @override
   Widget build(BuildContext context) {

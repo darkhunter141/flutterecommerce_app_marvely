@@ -1,7 +1,7 @@
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:marvelyprojects/files_dart/aurth_app/authpage.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:marvelyprojects/files_dart/aurth_app/authpage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class passreset extends StatefulWidget {

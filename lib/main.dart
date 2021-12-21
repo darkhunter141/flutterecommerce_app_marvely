@@ -1,9 +1,8 @@
-import 'package:marvelyprojects/files_dart/aurth_app/passwordreset.dart';
-import 'package:marvelyprojects/files_dart/splash/splash.dart';
+import 'package:double_back_to_close/double_back_to_close.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:double_back_to_close/double_back_to_close.dart';
+import 'package:marvelyprojects/files_dart/splash/splash.dart';
 
 void main() {
   runApp(mainclass());

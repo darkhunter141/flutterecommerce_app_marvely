@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:marvelyprojects/custom_widgets/custom_drawer.dart';
 import 'package:marvelyprojects/files_dart/cart/cart.dart';
 import 'package:marvelyprojects/files_dart/homepage/homepage.dart';
 import 'package:marvelyprojects/files_dart/notificationspage/notification.dart';
 import 'package:marvelyprojects/files_dart/profile/profiles.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 class custom_bottomnavigationbar extends StatefulWidget {
   @override

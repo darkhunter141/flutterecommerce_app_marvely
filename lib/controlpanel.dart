@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:marvelyprojects/custom_widgets/custom_appbar.dart';
 import 'package:marvelyprojects/custom_widgets/custom_drawer.dart';
 import 'package:marvelyprojects/files_dart/cart/cart.dart';
 import 'package:marvelyprojects/files_dart/homepage/homepage.dart';
@@ -21,9 +20,6 @@ class _main_controlpanelState extends State<main_controlpanel> {
   Widget build(BuildContext context) {
     var hei = MediaQuery.of(context).size.height;
     var wid = MediaQuery.of(context).size.width;
-
-
-
 
     return Scaffold(
       drawer: custom_drawer(),
