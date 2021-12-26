@@ -12,6 +12,10 @@ class _cartState extends State<cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor:Color(0xFF505050),
+        title: Text("Cart"),
+      ),
       body: SafeArea(
           child: Center(
         child: SafeArea(

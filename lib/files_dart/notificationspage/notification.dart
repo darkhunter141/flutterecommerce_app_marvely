@@ -20,8 +20,12 @@ class _notificationState extends State<notification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor:Color(0xFF505050),
+        title: Text("Notifications"),
+      ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding:  EdgeInsets.only(top: 10,left: 10,right: 10),
         child: ListView.builder(
             itemCount: g_data.length,
             itemBuilder: (context, index){
@@ -29,12 +33,12 @@ class _notificationState extends State<notification> {
               return Card(
                 elevation: 20,
                 child: ListTile(
-                  leading: Icon(Icons.notifications),
+                  leading: CircleAvatar(child: Icon(Icons.notifications)),
                   title: Text('${load['title']}',style: TextStyle(
-                    fontSize: 20
+                    fontSize: 20,color: Colors.blue
                   ),),
                   subtitle:Text('${load['subtitle']}',style: TextStyle(
-                      fontSize: 20
+                      fontSize: 20, color: Color(0xFF505050),
                   ),),
                 ),
               );

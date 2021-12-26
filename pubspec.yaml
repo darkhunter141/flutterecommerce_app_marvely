@@ -47,6 +47,8 @@ dependencies:
   firebase_auth: ^3.3.0
   swipeable_page_route: ^0.2.4
   http: ^0.13.4
+  dots_indicator: ^2.0.0
+  flutter_credit_card: ^3.0.1
 
 dev_dependencies:
   flutter_test:

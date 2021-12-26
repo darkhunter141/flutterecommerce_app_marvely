@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:marvelyprojects/files_dart/product_details/custom_product_display.dart';
 import 'package:marvelyprojects/files_dart/product_details/orderpage.dart';
 
@@ -213,27 +214,32 @@ class _customproduct_detailsState extends State<customproduct_details> {
                         mainAxisAlignment:
                         MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            width: wid / 2.2,
-                            height: hei / 15,
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                BorderRadius.circular(6),
-                                color: Colors.redAccent),
-                            child: Center(
-                              child: Text(
-                                "Add to Cart",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: hei / 42,
-                                  fontWeight: FontWeight.bold,
+                          InkWell(
+                            onTap: (){
+                              Fluttertoast.showToast(msg: "cart");
+                            }
+                            ,child: Container(
+                              width: wid / 2.2,
+                              height: hei / 15,
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                  BorderRadius.circular(6),
+                                  color: Colors.redAccent),
+                              child: Center(
+                                child: Text(
+                                  "Add to Cart",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: hei / 42,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                           InkWell(
                             onTap: (){
-                              Navigator.push(context,MaterialPageRoute(builder: (context)=>oder_now(widget.product_details,total_product_value)));
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>oder_now()));
                             },
                             child: Container(
                               width: wid / 2.2,
@@ -316,7 +322,7 @@ class _customproduct_detailsState extends State<customproduct_details> {
               SizedBox(width: wid / 40),
               InkWell(
                 onTap: (){
-                  show_cart();
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>oder_now()));
                 },
                 child: Padding(
                   padding: EdgeInsets.only(right: wid / 50),

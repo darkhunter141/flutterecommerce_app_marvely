@@ -56,6 +56,7 @@ class _profileState extends State<profile> {
         title: Text("My Profile"),
       ),
       body: SingleChildScrollView(
+
         child: Stack(
           children: [
             Column(

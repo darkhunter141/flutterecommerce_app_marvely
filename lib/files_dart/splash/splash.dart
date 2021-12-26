@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:marvelyprojects/controlpanel.dart';
 import 'package:marvelyprojects/files_dart/aurth_app/authpage.dart';
+import 'package:marvelyprojects/files_dart/pageview/pagecontrol_panel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 class splash extends StatefulWidget {
-
 
   @override
   State<splash> createState() => _splashState();
@@ -25,7 +25,7 @@ class _splashState extends State<splash> {
 
       }
       else{
-        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>auth()));
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>page_view()));
       }
     });
   }

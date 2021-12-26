@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:marvelyprojects/controlpanel.dart';
-import 'package:marvelyprojects/files_dart/profile/profiles.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class custom_drawer extends StatefulWidget {
-  const custom_drawer({Key? key}) : super(key: key);
 
   @override
   State<custom_drawer> createState() => _custom_drawerState();
@@ -86,19 +84,7 @@ class _custom_drawerState extends State<custom_drawer> {
                           TextStyle(fontSize: hei / 34, color: Colors.white)),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ListTile(
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>profile()));
-                  },
-                  leading: Icon(Icons.account_circle,
-                      size: hei / 24, color: Colors.white),
-                  title: Text("My Profile",
-                      style:
-                          TextStyle(fontSize: hei / 34, color: Colors.white)),
-                ),
-              ),
+
               Padding(
                 padding:EdgeInsets.all(8.0),
                 child: ListTile(
