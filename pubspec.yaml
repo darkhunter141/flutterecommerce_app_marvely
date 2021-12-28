@@ -49,6 +49,10 @@ dependencies:
   http: ^0.13.4
   dots_indicator: ^2.0.0
   flutter_credit_card: ^3.0.1
+  geolocator: ^8.0.1
+  geocoding: ^2.0.1
+  geocode: ^1.0.1
+  cached_network_image: ^3.2.0
 
 dev_dependencies:
   flutter_test:

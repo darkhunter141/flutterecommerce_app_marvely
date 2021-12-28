@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:marvelyprojects/custom_widgets/custom_drawer.dart';
+import 'package:marvelyprojects/files_dart/about_developer/aboutme.dart';
 import 'package:marvelyprojects/files_dart/aurth_app/authpage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
@@ -148,17 +149,21 @@ class _profileState extends State<profile> {
                           )),),
                         ),
                       ),
-                      TextButton(onPressed: (){},
+                      TextButton(onPressed: (){
+                        Navigator.of(context).push(SwipeablePageRoute(
+                            canOnlySwipeFromEdge: true,
+                            builder: (BuildContext context) =>about_developer()));
+                      },
                         child: ListTile(
                           leading: Icon (Icons.add_chart,size: hei/23),
                           trailing:  Icon (Icons.arrow_forward ,size: hei/23),
-                          title: Text ("About",style: GoogleFonts.notoSans(textStyle: TextStyle(
+                          title: Text ("About Developer",style: GoogleFonts.notoSans(textStyle: TextStyle(
                             fontSize: hei/45,fontWeight: FontWeight.w400,
                           )),),
                         ),
                       ),
                       TextButton(onPressed: (){
-                        Navigator.of(context).pushReplacement(SwipeablePageRoute(
+                        Navigator.of(context).push(SwipeablePageRoute(
                             canOnlySwipeFromEdge: true,
                             builder: (BuildContext context) =>auth()));
                         setpageopen();

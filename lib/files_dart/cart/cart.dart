@@ -19,20 +19,9 @@ class _cartState extends State<cart> {
       body: SafeArea(
           child: Center(
         child: SafeArea(
-          child: ListView(
-            children: [
-              GridView.builder(
-                shrinkWrap: true,
-                  itemCount: cart_product.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                  ),
-                  itemBuilder: (Buildercontext, index) {
-                    return Container(
-                      child: Text (''),
-                    );
-                  })
-            ],
+          child: Center(
+
+            child:Text("Nais Cart",style: TextStyle(color: Colors.black,fontSize:60,fontWeight: FontWeight.bold)),
           ),
         ),
       )),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marvelyprojects/files_dart/search/dearch.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   CustomAppBar({Key, key})
@@ -21,7 +22,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
       elevation: 0,
       backgroundColor: Color(0xFF505050),
       title: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(context,MaterialPageRoute(builder:(context)=>search()));
+        },
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(7), color: Colors.white),
