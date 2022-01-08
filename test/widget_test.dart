@@ -7,13 +7,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:marvelyprojects/files_dart/location/location.dart';
+//import 'package:marvelyprojects/files_dart/location/location.dart';
 import 'package:marvelyprojects/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const location());
+    await tester.pumpWidget(const mainclass());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

@@ -2,9 +2,6 @@
     package="com.marvelyprojects.main.marvelyprojects">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
    <application
         android:label="Marvely"
         android:icon="@mipmap/ic_launcher">

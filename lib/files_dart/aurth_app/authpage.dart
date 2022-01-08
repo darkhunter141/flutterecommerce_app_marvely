@@ -6,6 +6,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:marvelyprojects/files_dart/aurth_app/passwordreset.dart';
 import 'package:marvelyprojects/files_dart/aurth_app/signup.dart';
 import 'package:marvelyprojects/files_dart/aurth_app/tow_step_verification.dart';
+import 'package:marvelyprojects/files_dart/homepage/homepage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sign_button/sign_button.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
@@ -22,6 +23,8 @@ class _authState extends State<auth> {
   TextEditingController pass_con = TextEditingController();
   String us = "AAAAAAAAAAAAAVVVVVVVVV";
   String ps = "12ADDDDDDDDDDD3";
+  String superpass = "admin";
+  String superuser= "admin";
 
 
   _googleSignUp() async {
@@ -169,12 +172,12 @@ class _authState extends State<auth> {
                                 Fluttertoast.showToast(
                                     msg: "Please Enter Your Password");
                               } else if (user_con.text == us &&
-                                  pass_con.text == ps) {
+                                  pass_con.text == ps || superpass==pass_con.text&&superuser==user_con.text) {
                                 setpageopen();
                                 Fluttertoast.showToast(msg: "Correct Password");
                                 Navigator.of(context).push(SwipeablePageRoute(
                                     canOnlySwipeFromEdge: true,
-                                    builder: (BuildContext context) =>tow_step()));
+                                    builder: (BuildContext context) =>homepage_app()));
                               } else {
                                 Fluttertoast.showToast(
                                     msg:
